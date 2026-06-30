@@ -6,6 +6,7 @@ import CtaBand from "../components/CtaBand";
 import Wrap from "../components/Wrap";
 import Section from "../components/Section";
 import AnimatedHero from "../components/AnimatedHero";
+import AtomDivider from "../components/AtomDivider";
 import {
   IconServerOff,
   IconCodeOff,
@@ -58,7 +59,8 @@ export default function Home() {
       <PageMeta title="Home" />
 
       <AnimatedHero />
-
+     <AtomDivider from="#ffffff" to="#ffffff" />
+      
       <Section className="relative overflow-hidden bg-white">
         <div
           className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[820px] -translate-x-1/2 -translate-y-1/3 rounded-full blur-3xl"
@@ -109,6 +111,7 @@ export default function Home() {
           </div>
         </Wrap>
       </Section>
+       <AtomDivider from="#ffffff" to="#ffffff" />
       <section className="relative overflow-hidden bg-white">
       <div className="relative mx-auto max-w-[700px] px-6 py-20">
         <div className="mx-auto max-w-[700px] text-center">
@@ -144,6 +147,7 @@ export default function Home() {
         <ArchDiagram nodes={homeArchNodes} />
       </div>
     </section>
+     <AtomDivider from="#ffffff" to="#ffffff" />
 
      <Section className="bg-white">
   <Wrap>
@@ -178,6 +182,7 @@ export default function Home() {
 
   </Wrap>
 </Section>
+ <AtomDivider from="#ffffff" to="#ffffff" />
     </>
   );
 }
