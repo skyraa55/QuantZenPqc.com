@@ -1,3 +1,5 @@
+
+import { useRef,useState,useEffect } from "react";
 import PageMeta from "../components/PageMeta";
 import Eyebrow from "../components/Eyebrow";
 import Card from "../components/Card";
@@ -5,6 +7,7 @@ import ArchDiagram from "../components/ArchDiagram";
 import CtaBand from "../components/CtaBand";
 import Wrap from "../components/Wrap";
 import Section from "../components/Section";
+import ProductHeroStrip from "../components/ProductHeroStrip";
 
 const productArchNodes = [
   { title: "Application", detail: "client / mobile / service" },
@@ -69,39 +72,136 @@ const components = [
   },
 ];
 
-export default function Product() {
+export default function ProductHero() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let W, H, nodes = [], animId, atomAngle = 0;
+    const INDIGO = "rgba(99,102,241,";
+    const SKY = "rgba(186,230,253,";
+
+    function resize() {
+      W = canvas.offsetWidth; H = canvas.offsetHeight;
+      canvas.width = W * devicePixelRatio; canvas.height = H * devicePixelRatio;
+      ctx.scale(devicePixelRatio, devicePixelRatio);
+      init();
+    }
+
+    function init() {
+      nodes = [];
+      for (let i = 0; i < 28; i++) {
+        nodes.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * 0.28, vy: (Math.random() - .5) * 0.28,
+          r: Math.random() * 1.8 + 0.8,
+          color: Math.random() > 0.5 ? "indigo" : "sky",
+          pulse: Math.random() * Math.PI * 2,
+        });
+      }
+    }
+
+    function drawAtom(cx, cy, rx, ry, color, angle) {
+      const col = color === "indigo" ? INDIGO : SKY;
+      [0, 60, 120].forEach(deg => {
+        const a = (deg + angle) * Math.PI / 180;
+        ctx.save(); ctx.translate(cx, cy); ctx.rotate(a);
+        ctx.beginPath();
+        ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = col + "0.3)"; ctx.lineWidth = 0.8; ctx.stroke();
+        const ex = rx * Math.cos(angle * Math.PI / 180);
+        const ey = ry * Math.sin(angle * Math.PI / 180);
+        ctx.beginPath(); ctx.arc(ex, ey, 2, 0, Math.PI * 2);
+        ctx.fillStyle = col + "0.8)"; ctx.fill();
+        ctx.restore();
+      });
+      ctx.beginPath(); ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+      ctx.fillStyle = col + "0.7)"; ctx.fill();
+    }
+
+    function frame() {
+      ctx.clearRect(0, 0, W, H);
+      atomAngle += 0.3;
+
+      // grid
+      ctx.strokeStyle = "rgba(99,102,241,0.045)"; ctx.lineWidth = 1;
+      for (let x = 0; x < W; x += 44) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+      for (let y = 0; y < H; y += 44) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+
+      nodes.forEach(n => {
+        n.x += n.vx; n.y += n.vy; n.pulse += 0.02;
+        if (n.x < 0 || n.x > W) n.vx *= -1;
+        if (n.y < 0 || n.y > H) n.vy *= -1;
+      });
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 110) {
+            const alpha = (1 - dist / 110) * 0.18;
+            ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = (nodes[i].color === "indigo" && nodes[j].color === "indigo") ? INDIGO + alpha + ")" : SKY + alpha + ")";
+            ctx.lineWidth = 0.7; ctx.stroke();
+          }
+        }
+      }
+
+      nodes.forEach(n => {
+        const col = n.color === "indigo" ? INDIGO : SKY;
+        const pulse = 0.5 + 0.5 * Math.sin(n.pulse);
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = col + (0.5 + pulse * 0.3) + ")"; ctx.fill();
+      });
+
+      drawAtom(W * 0.1, H * 0.48, 36, 16, "indigo", atomAngle);
+      drawAtom(W * 0.9, H * 0.52, 40, 18, "sky", -atomAngle * 0.8);
+
+      animId = requestAnimationFrame(frame);
+    }
+
+    resize();
+    window.addEventListener("resize", () => { cancelAnimationFrame(animId); resize(); });
+    frame();
+    return () => { cancelAnimationFrame(animId); window.removeEventListener("resize", resize); };
+  }, []);
+
   return (
     <>
-      <PageMeta title="Product" />
+     <div className="relative overflow-hidden bg-[#07071a]" style={{ borderRadius: "0 0 24px 24px", height: 320 }}>
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
-      {/* ── Section 1: Platform intro ── */}
-      <Section className="relative overflow-hidden bg-white">
-        <div
-          className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[820px] -translate-x-1/2 -translate-y-1/3 rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(closest-side, rgba(99,102,241,0.14), rgba(186,230,253,0.2), transparent)",
-          }}
-        />
-        <Wrap className="relative">
+      {/* corner lights */}
+      <div className="pointer-events-none absolute -top-24 -left-24 w-[360px] h-[360px] rounded-full"
+        style={{ background: "radial-gradient(circle,rgba(99,102,241,0.35) 0%,rgba(99,102,241,0.08) 45%,transparent 70%)" }} />
+      <div className="pointer-events-none absolute -bottom-20 -right-20 w-[300px] h-[300px] rounded-full"
+        style={{ background: "radial-gradient(circle,rgba(186,230,253,0.28) 0%,rgba(186,230,253,0.06) 45%,transparent 70%)" }} />
+
+      {/* content */}
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6">
+        <span className="mb-[18px] inline-flex items-center gap-[6px] rounded-full border border-indigo-500/30 bg-indigo-500/15 px-4 py-[5px] text-[11px] font-semibold uppercase tracking-widest text-indigo-300">
+          <span className="h-[5px] w-[5px] rounded-full bg-indigo-400" />
+          The platform
+        </span>
+        <h1 className="text-[32px] max-[860px]:text-[24px] font-bold text-white max-w-[660px] leading-snug mb-3">
+          QuantZen™ — quantum-safe middleware<br className="hidden sm:block" /> for API communication.
+        </h1>
+        <p className="text-[14px] text-slate-400 max-w-[520px] leading-[1.7]">
+          A modular security layer that intercepts API traffic, applies post-quantum cryptography, and records an immutable audit trail — without changing the systems it protects.
+        </p>
+      </div>
+     
+     
+    </div>
+ 
+    <Section className="relative overflow-hidden bg-white">
+        
+        {/* <Wrap className="relative"> */}
           <div className="flex flex-col items-center text-center mb-2">
-            <span className="inline-flex items-center gap-[7px] text-[11px] font-semibold uppercase tracking-[.1em] text-indigo-500 bg-indigo-50 border border-indigo-100 rounded-full px-4 py-[5px] mb-5">
-              <span className="w-[5px] h-[5px] rounded-full bg-indigo-500" />
-              The platform
-            </span>
-            <h2 className="text-[34px] max-[860px]:text-[27px] font-bold text-gray-950 max-w-[760px] leading-snug">
-              QuantZen™ — quantum-safe middleware for API communication.
-            </h2>
-            <p className="mt-4 max-w-[680px] text-lg text-slate-500 leading-relaxed">
-              QuantZen is a modular security layer that intercepts API traffic,
-              applies post-quantum confidentiality and authenticity, verifies
-              every request before it reaches your systems, and records an
-              immutable audit trail — all without changing the systems it
-              protects.
-            </p>
+            <ArchDiagram nodes={productArchNodes} chips={gatewayChips} spaced />
           </div>
-          <ArchDiagram nodes={productArchNodes} chips={gatewayChips} spaced />
-        </Wrap>
+        {/* </Wrap> */}
       </Section>
 
       {/* ── Section 2: Platform components ── */}
@@ -166,5 +266,20 @@ export default function Product() {
         </Wrap>
       </Section>
     </>
-  );
-}
+   
+);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
