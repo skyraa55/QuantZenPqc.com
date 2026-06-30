@@ -1,18 +1,21 @@
-export default function Card({ icon, iconStyle, title, children, className = "" }) {
+export default function Card({ icon, num, title, children, className = "" }) {
   return (
-    <div
-      className={`group rounded-[14px] border border-line bg-gradient-to-b from-panel to-ink2 p-6.5 transition-all duration-200 hover:-translate-y-[3px] hover:border-line2 [&_p]:text-[14.5px] [&_p]:text-muted ${className}`.trim()}
-    >
-      {icon !== undefined && (
-        <div
-          className="mb-4 grid h-[38px] w-[38px] place-items-center rounded-[9px] border border-line2 bg-blue/[0.07] font-mono text-[15px] text-blue"
-          style={iconStyle}
-        >
-          {icon}
+    <div className={`bg-white border border-[#eaeaf2] rounded-2xl p-[30px_28px_28px] hover:border-indigo-200 hover:shadow-[0_2px_20px_rgba(99,102,241,.07)] transition-all ${className}`}>
+      
+      {/* Only renders in valueProps cards where icon + num are passed as props */}
+      {(icon || num) && (
+        <div className="flex items-center justify-between mb-[18px]">
+          <div className="w-[38px] h-[38px] rounded-[9px] bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-500">
+            {icon}
+          </div>
+          <span className="text-[11px] font-bold tracking-[.1em] text-[#dedee8]">{num}</span>
         </div>
       )}
-      {title && <h3 className="mb-2 text-lg">{title}</h3>}
-      {children}
+
+      <h3 className="text-[14px] font-bold text-gray-950 mb-2 leading-snug">{title}</h3>
+      
+      {/* children handles everything else — threat cards pass their icon inside here */}
+      <div className="text-[13px] text-slate-500 leading-[1.65]">{children}</div>
     </div>
   );
 }

@@ -20,6 +20,21 @@ function pt(rx, ry, deg, a) {
   return [lx * Math.cos(t) - ly * Math.sin(t), lx * Math.sin(t) + ly * Math.cos(t)];
 }
 
+const FEATURE_CARDS = [
+  {
+    title: "FIPS 203 / 204",
+    desc: "NIST-standardized ML-KEM & ML-DSA",
+  },
+  {
+    title: "Zero rewrites",
+    desc: "No application or gateway rewrites",
+  },
+  {
+    title: "Drop-in middleware",
+    desc: "At your API boundary",
+  },
+];
+
 export default function AnimatedHero() {
   const canvasRef = useRef(null);
   const stateRef = useRef(null);
@@ -31,7 +46,6 @@ export default function AnimatedHero() {
     const reduced =
       window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // Mutable state lives in a ref so resize handler can access it
     const state = {
       W: 0,
       H: 0,
@@ -325,12 +339,31 @@ export default function AnimatedHero() {
 
         {/* CTAs */}
         <div style={styles.btns}>
-          <button style={styles.bp} onMouseEnter={e => Object.assign(e.currentTarget.style, styles.bpHover)} onMouseLeave={e => Object.assign(e.currentTarget.style, styles.bp)}>
+          <button
+            style={styles.bp}
+            onMouseEnter={e => Object.assign(e.currentTarget.style, styles.bpHover)}
+            onMouseLeave={e => Object.assign(e.currentTarget.style, styles.bp)}
+          >
             Request a demo →
           </button>
-          <button style={styles.bg} onMouseEnter={e => Object.assign(e.currentTarget.style, styles.bgHover)} onMouseLeave={e => Object.assign(e.currentTarget.style, styles.bg)}>
+          <button
+            style={styles.bg}
+            onMouseEnter={e => Object.assign(e.currentTarget.style, styles.bgHover)}
+            onMouseLeave={e => Object.assign(e.currentTarget.style, styles.bg)}
+          >
             See the architecture ↗
           </button>
+        </div>
+
+
+        {/* Feature cards */}
+        <div style={styles.cards}>
+          {FEATURE_CARDS.map((card, i) => (
+            <div key={i} style={styles.card}>
+              <p style={styles.cardTitle}>{card.title}</p>
+              <p style={styles.cardDesc}>{card.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -353,11 +386,12 @@ const styles = {
     minHeight: "700px",
     background: "#030712",
     position: "relative",
-    overflow: "hidden",
+    overflow: "visible",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
+    paddingBottom: "80px",
   },
   canvas: {
     position: "absolute",
@@ -370,8 +404,8 @@ const styles = {
     position: "relative",
     zIndex: 3,
     textAlign: "center",
-    padding: "60px 24px",
-    maxWidth: "680px",
+    padding: "60px 24px 0",
+    maxWidth: "780px",
     width: "100%",
   },
   patent: {
@@ -431,7 +465,7 @@ const styles = {
     justifyContent: "center",
     gap: "14px",
     flexWrap: "wrap",
-    marginBottom: "36px",
+    marginBottom: "56px",
   },
   bp: {
     display: "inline-flex",
@@ -493,5 +527,61 @@ const styles = {
     cursor: "pointer",
     background: "transparent",
     transition: "border-color .2s ease,color .2s ease",
+  },
+
+  /* ── Feature cards ── */
+  cards: {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: "14px",
+    transform: "translateY(52px)",
+    position: "relative",
+    zIndex: 10,
+  },
+  card: {
+    borderRadius: "16px",
+    padding: "20px 20px 22px",
+    textAlign: "left",
+    backdropFilter: "blur(12px)",
+    WebkitBackdropFilter: "blur(12px)",
+    transition: "transform .22s ease, box-shadow .22s ease, border-color .22s ease",
+    cursor: "default",
+  },
+  cardTop: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: "14px",
+  },
+  cardTag: {
+    fontSize: "10px",
+    fontWeight: 700,
+    letterSpacing: "0.1em",
+    textTransform: "uppercase",
+    padding: "3px 9px",
+    borderRadius: "100px",
+    lineHeight: 1.6,
+  },
+  cardAccentLine: {
+    height: "1.5px",
+    borderRadius: "2px",
+    marginBottom: "14px",
+    opacity: 0.6,
+  },
+  cardTitle: {
+    fontSize: "16px",
+    fontWeight: 700,
+    color: "#e2e8f0",
+    margin: "0 0 7px",
+    padding: 0,
+    letterSpacing: "-0.02em",
+    lineHeight: 1.25,
+  },
+  cardDesc: {
+    fontSize: "12.5px",
+    color: "rgba(148,163,184,0.65)",
+    lineHeight: 1.6,
+    margin: 0,
+    padding: 0,
   },
 };
