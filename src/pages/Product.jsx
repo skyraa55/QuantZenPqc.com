@@ -74,56 +74,91 @@ export default function Product() {
     <>
       <PageMeta title="Product" />
 
-      <Section>
-        <Wrap>
-          <Eyebrow>The platform</Eyebrow>
-          <h2 className="mt-3.5 max-w-[760px] text-[34px] max-[860px]:text-[27px]">
-            QuantZen™ — quantum-safe middleware for API communication.
-          </h2>
-          <p className="mt-4.5 max-w-[680px] text-lg text-muted">
-            QuantZen is a modular security layer that intercepts API traffic,
-            applies post-quantum confidentiality and authenticity, verifies
-            every request before it reaches your systems, and records an
-            immutable audit trail — all without changing the systems it
-            protects.
-          </p>
+      {/* ── Section 1: Platform intro ── */}
+      <Section className="relative overflow-hidden bg-white">
+        <div
+          className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[820px] -translate-x-1/2 -translate-y-1/3 rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(closest-side, rgba(99,102,241,0.14), rgba(186,230,253,0.2), transparent)",
+          }}
+        />
+        <Wrap className="relative">
+          <div className="flex flex-col items-center text-center mb-2">
+            <span className="inline-flex items-center gap-[7px] text-[11px] font-semibold uppercase tracking-[.1em] text-indigo-500 bg-indigo-50 border border-indigo-100 rounded-full px-4 py-[5px] mb-5">
+              <span className="w-[5px] h-[5px] rounded-full bg-indigo-500" />
+              The platform
+            </span>
+            <h2 className="text-[34px] max-[860px]:text-[27px] font-bold text-gray-950 max-w-[760px] leading-snug">
+              QuantZen™ — quantum-safe middleware for API communication.
+            </h2>
+            <p className="mt-4 max-w-[680px] text-lg text-slate-500 leading-relaxed">
+              QuantZen is a modular security layer that intercepts API traffic,
+              applies post-quantum confidentiality and authenticity, verifies
+              every request before it reaches your systems, and records an
+              immutable audit trail — all without changing the systems it
+              protects.
+            </p>
+          </div>
           <ArchDiagram nodes={productArchNodes} chips={gatewayChips} spaced />
         </Wrap>
       </Section>
 
-      <Section>
+      {/* ── Section 2: Platform components ── */}
+      <Section className="bg-white">
         <Wrap>
-          <Eyebrow>Platform components</Eyebrow>
-          <h2 className="mt-3.5 max-w-[760px] text-[34px] max-[860px]:text-[27px]">
-            Eight components, one cohesive layer.
-          </h2>
-          <div className="mt-10 grid grid-cols-2 gap-4.5 max-[860px]:grid-cols-1">
+          <div className="flex flex-col items-center text-center mb-10">
+            <span className="inline-flex items-center gap-[7px] text-[11px] font-semibold uppercase tracking-[.1em] text-indigo-500 bg-indigo-50 border border-indigo-100 rounded-full px-4 py-[5px] mb-5">
+              <span className="w-[5px] h-[5px] rounded-full bg-indigo-500" />
+              Platform components
+            </span>
+            <h2 className="text-[34px] max-[860px]:text-[27px] font-bold text-gray-950 max-w-[760px] leading-snug">
+              Eight components, one cohesive layer.
+            </h2>
+          </div>
+
+          <div className="mt-2 grid grid-cols-2 gap-4 max-[860px]:grid-cols-1">
             {components.map((c) => (
-              <Card key={c.num}>
-                <div className="font-mono text-[13px] text-faint">{c.num}</div>
-                <h3 className="mb-2 text-lg">{c.title}</h3>
-                <p>{c.body}</p>
-              </Card>
+              <div
+                key={c.num}
+                className="bg-white border border-[#eaeaf2] rounded-2xl p-7 hover:border-indigo-200 hover:shadow-[0_2px_20px_rgba(99,102,241,.07)] transition-all"
+              >
+                <div className="font-mono text-[11px] font-bold tracking-[.1em] text-[#dedee8] mb-4">
+                  {c.num}
+                </div>
+                <h3 className="text-[15px] font-bold text-gray-950 mb-2 leading-snug">
+                  {c.title}
+                </h3>
+                <p className="text-[13px] text-slate-500 leading-[1.65]">
+                  {c.body}
+                </p>
+              </div>
             ))}
           </div>
         </Wrap>
       </Section>
 
-      <Section>
+      {/* ── Section 3: Integration + CTA ── */}
+      <Section className="bg-white">
         <Wrap>
-          <Eyebrow>Integration</Eyebrow>
-          <h2 className="mt-3.5 max-w-[760px] text-[34px] max-[860px]:text-[27px]">
-            Built to sit beside your stack, not inside it.
-          </h2>
-          <p className="mt-4.5 max-w-[680px] text-lg text-muted">
-            QuantZen integrates with the API gateways and infrastructure you
-            already operate. It runs as a stateless layer at the boundary, so
-            traffic continues to flow through your existing gateway to
-            unchanged backend services. Adoption is incremental — protect one
-            domain or route first, then expand by policy.
-          </p>
+          <div className="flex flex-col items-center text-center mb-10">
+            <span className="inline-flex items-center gap-[7px] text-[11px] font-semibold uppercase tracking-[.1em] text-indigo-500 bg-indigo-50 border border-indigo-100 rounded-full px-4 py-[5px] mb-5">
+              <span className="w-[5px] h-[5px] rounded-full bg-indigo-500" />
+              Integration
+            </span>
+            <h2 className="text-[34px] max-[860px]:text-[27px] font-bold text-gray-950 max-w-[760px] leading-snug">
+              Built to sit beside your stack, not inside it.
+            </h2>
+            <p className="mt-4 max-w-[680px] text-lg text-slate-500 leading-relaxed">
+              QuantZen integrates with the API gateways and infrastructure you
+              already operate. It runs as a stateless layer at the boundary, so
+              traffic continues to flow through your existing gateway to
+              unchanged backend services. Adoption is incremental — protect one
+              domain or route first, then expand by policy.
+            </p>
+          </div>
+
           <CtaBand
-            className="mt-10"
             heading="Map QuantZen to your architecture."
             body="We'll review your gateway, protocols, and payload formats and show exactly where the layer fits."
             ctaLabel="Talk to our engineers →"
