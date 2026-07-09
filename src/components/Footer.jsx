@@ -47,8 +47,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-3.5 max-w-[320px] text-[13px] text-slate-500">
-              Patent-pending post-quantum protection for API-driven digital
-              communication networks.
+             Patent filed application no : 202641078837 Post quantum cybersecurity platform that enables banks, telecom operators, and fintechs to adopt quantum safe cryptography without replacing their existing infrastructure. 
             </p>
 
             <div className="mt-5 flex items-center gap-2.5">

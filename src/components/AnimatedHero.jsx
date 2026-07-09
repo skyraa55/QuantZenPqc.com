@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 
 const ORBITS = [
@@ -23,14 +24,14 @@ function pt(rx, ry, deg, a) {
 const FEATURE_CARDS = [
   {
     title: "FIPS 203 / 204",
-    desc: "NIST-standardized ML-KEM & ML-DSA",
+    desc: "NIST standardized ML KEM & ML DSA",
   },
   {
     title: "Zero rewrites",
     desc: "No application or gateway rewrites",
   },
   {
-    title: "Drop-in middleware",
+    title: "Drop in middleware",
     desc: "At your API boundary",
   },
 ];
@@ -317,13 +318,12 @@ export default function AnimatedHero() {
       <div style={styles.ui}>
         {/* Patent badge */}
         <div style={styles.patent}>
-          <span style={styles.pdot} />
-          <span style={styles.pt}>Patent Pending · Indian Patent Application Filed</span>
+          <span style={styles.pt}>Indian Patent Application Filed - 202641078837</span>
         </div>
 
         {/* Headline */}
         <h1 style={styles.h1}>
-          Quantum-resilient protection
+          Quantum resilient protection
           <br />
           for the APIs your business{" "}
            <span
@@ -342,8 +342,8 @@ export default function AnimatedHero() {
         {/* Sub-copy */}
         <p style={styles.sub}>
           QuantZen™ is a middleware security layer that adds{" "}
-          <strong style={styles.strong}>post-quantum cryptographic protection</strong> to
-          your API traffic — without replacing infrastructure or modifying a single
+          <strong style={styles.strong}>post quantum cryptographic protection</strong> to
+          your API traffic without replacing infrastructure or modifying a single
           application.
         </p>
 
@@ -365,6 +365,24 @@ export default function AnimatedHero() {
           </button>
         </div>
 
+        {/* Trusted icon */}
+        <div style={styles.trustRow}>
+          <img src="/Trustedicon.png" alt="Trusted" style={styles.trustIcon} />
+        </div>
+
+        {/* Badge row */}
+        <div style={styles.badgeRow}>
+          <img
+            src="/PostQuantumReady.png"
+            alt="Post Quantum Ready"
+            style={styles.badgeImg}
+          />
+          <img
+            src="/NoForkNoMigration.png"
+            alt="No Fork No Migration"
+            style={styles.badgeImg}
+          />
+        </div>
 
         {/* Feature cards */}
         <div style={styles.cards}>
@@ -475,7 +493,7 @@ const styles = {
     justifyContent: "center",
     gap: "14px",
     flexWrap: "wrap",
-    marginBottom: "56px",
+    marginBottom: "30px"
   },
   bp: {
     display: "inline-flex",
@@ -539,6 +557,37 @@ const styles = {
     transition: "border-color .2s ease,color .2s ease",
   },
 
+  /* ── Trusted icon (centered above the badge pair) ── */
+  /* ── Trusted icon (centered above the badge pair) ── */
+  trustRow: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "0px",    // ↓↓ almost no gap to badge row
+    position: "relative",
+    zIndex: 10,
+  },
+  trustIcon: {
+    height: "140px",
+    width: "auto",
+    objectFit: "contain",
+  },
+
+  /* ── Badge row (side by side, gap between, centered as a pair) ── */
+  badgeRow: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "32px",
+    marginBottom: "2px",   
+    position: "relative",
+    zIndex: 10,
+    transform: "translateY(-40%)"
+  },
+  badgeImg: {
+    height: "120px",
+    width: "auto",
+    objectFit: "contain",
+  },
   /* ── Feature cards ── */
   cards: {
     display: "grid",
@@ -547,6 +596,7 @@ const styles = {
     transform: "translateY(52px)",
     position: "relative",
     zIndex: 10,
+    transform: "translateY(-20%)"
   },
   card: {
     borderRadius: "16px",

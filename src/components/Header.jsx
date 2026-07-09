@@ -97,7 +97,7 @@ export default function Header() {
           font-size: 14px;
           font-weight: 800;
           color: #4f46e5;
-          vertical-align: super;
+          vertical-align: baseline; 
           letter-spacing: 0;
           text-shadow: 0 0 8px rgba(99,102,241,0.3);
         }
