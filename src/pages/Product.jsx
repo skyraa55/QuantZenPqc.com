@@ -10,14 +10,10 @@ import ProductHeroStrip from "../components/ProductHeroStrip";
 import AtomDivider from "../components/AtomDivider";
 
 const productArchNodes = [
-  { title: "Application", detail: "client / mobile / service" },
-  {
-    title: "QuantZen™ Security Layer",
-    detail: "SDK · interception · crypto · verify · policy · audit",
-    highlight: true,
-  },
-  { title: "API Gateway", detail: "existing gateway" },
-  { title: "Backend Systems", detail: "core unchanged" },
+  { id: "app",     title: "Application",              detail: "client / mobile / service",                              icon: "ti-device-laptop", highlight: false },
+  { id: "qz",      title: "QuantZen™ Security Layer",  detail: "SDK · interception · crypto · verify · policy · audit",  icon: "ti-shield-lock",   highlight: true  },
+  { id: "gateway", title: "API Gateway",               detail: "existing gateway",                                       icon: "ti-server",        highlight: false },
+  { id: "backend", title: "Backend Systems",           detail: "core unchanged",                                         icon: "ti-database",      highlight: false },
 ];
 
 const gatewayChips = [

@@ -73,7 +73,7 @@ export default function ArchDiagram({ nodes: nodesProp }) {
           position: relative;
           z-index: 10;
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           justify-content: center;
           flex-wrap: nowrap;
           gap: 0;
@@ -109,14 +109,20 @@ export default function ArchDiagram({ nodes: nodesProp }) {
 
         .arch-node-box {
           width: 100%;
-          max-width: 148px;
-          padding: clamp(12px, 3vw, 18px) clamp(8px, 2vw, 12px);
+          max-width: clamp(120px, 22vw, 172px);
+          min-height: clamp(96px, 14vw, 116px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: clamp(12px, 3vw, 18px) clamp(10px, 2.4vw, 14px);
           border-radius: 16px;
           text-align: center;
           background: #fff;
           border: 1.5px solid rgba(99,102,241,0.13);
           box-shadow: 0 2px 12px rgba(99,102,241,0.05);
           box-sizing: border-box;
+          overflow-wrap: break-word;
+          word-break: break-word;
           transition: transform .3s ease, box-shadow .3s ease, background .4s ease, border-color .4s ease;
         }
         .arch-node-box.lit {
@@ -138,6 +144,7 @@ export default function ArchDiagram({ nodes: nodesProp }) {
           line-height: 1;
           background: rgba(186,230,253,0.45);
           border: 1px solid rgba(99,102,241,0.14);
+          flex-shrink: 0;
           transition: background .4s ease, border-color .4s ease;
         }
         .arch-node-box.lit .arch-icon { background: rgba(99,102,241,0.13); border-color: rgba(99,102,241,0.3); }
@@ -147,6 +154,10 @@ export default function ArchDiagram({ nodes: nodesProp }) {
           font-weight: 600;
           color: #1e1b4b;
           letter-spacing: -0.01em;
+          line-height: 1.3;
+          overflow-wrap: break-word;
+          word-break: break-word;
+          hyphens: auto;
           transition: color .3s;
         }
         .arch-node-box.lit .arch-name { color: #3730a3; }
@@ -156,6 +167,10 @@ export default function ArchDiagram({ nodes: nodesProp }) {
           font-family: monospace;
           color: #94a3b8;
           margin-top: 3px;
+          line-height: 1.45;
+          overflow-wrap: break-word;
+          word-break: break-word;
+          hyphens: auto;
           transition: color .3s;
         }
         .arch-node-box.lit .arch-mono { color: #6366f1; }
@@ -164,11 +179,16 @@ export default function ArchDiagram({ nodes: nodesProp }) {
           font-size: 10px;
           text-align: center;
           color: #b0b7c3;
+          max-width: 100%;
+          overflow-wrap: break-word;
+          word-break: break-word;
         }
 
         .arch-arrow-cell {
           flex: 0 0 auto;
-          padding: 0 2px 28px;
+          align-self: center;
+          margin-top: clamp(24px, 5vw, 32px);
+          padding: 0 2px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -188,9 +208,14 @@ export default function ArchDiagram({ nodes: nodesProp }) {
           }
           .arch-node-col {
             width: 100%;
-            max-width: 220px;
+            max-width: 260px;
+          }
+          .arch-node-box {
+            max-width: 100%;
+            min-height: 0;
           }
           .arch-arrow-cell {
+            margin-top: 0;
             padding: 6px 0;
             transform: rotate(90deg);
           }
@@ -198,12 +223,12 @@ export default function ArchDiagram({ nodes: nodesProp }) {
         }
 
         @media (min-width: 641px) and (max-width: 860px) {
-          .arch-node-box { max-width: 120px; }
+          .arch-node-box { max-width: 128px; min-height: clamp(104px, 18vw, 128px); }
           .arch-arrow-cell svg { width: 34px; }
         }
 
         @media (min-width: 861px) and (max-width: 1100px) {
-          .arch-node-box { max-width: 100px; }
+          .arch-node-box { max-width: 116px; }
           .arch-name { font-size: 10.5px; }
           .arch-arrow-cell svg { width: 28px; }
         }

@@ -157,7 +157,7 @@ export default function PressRelease() {
   };
 
   return (
-    <section className="w-full bg-white py-20 px-6">
+    <section className="w-full bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
       <style>{`
         .pr-transition {
           transition: opacity ${FADE_MS}ms ease, transform ${FADE_MS}ms ease;
@@ -181,49 +181,52 @@ export default function PressRelease() {
       `}</style>
 
       {/* Static header */}
-      <div className="max-w-3xl mx-auto text-center mb-16">
-        <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 text-indigo-600 text-sm font-semibold px-4 py-1.5 mb-6">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12 lg:mb-16">
+        <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 text-indigo-600 text-xs sm:text-sm font-semibold px-3.5 sm:px-4 py-1.5 mb-5 sm:mb-6">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0">
             <rect x="3" y="4" width="18" height="16" rx="2" />
             <path d="M7 8h10M7 12h10M7 16h6" />
           </svg>
           LATEST NEWS
         </span>
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-3 sm:mb-4">
           Press Release
         </h2>
-        <p className="text-gray-500 text-lg">
+        <p className="text-gray-500 text-base sm:text-lg px-2">
           QuantZen joins the forefront of quantum security innovation
         </p>
       </div>
 
       {/* Rotating content */}
       <div
-        className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-        style={{ minHeight: 380 }}
+        className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center"
+        style={{ minHeight: "auto" }}
         onPointerEnter={handlePointerEnter}
         onPointerLeave={handlePointerLeave}
       >
         {/* Left: text — same DOM node throughout, only classes + content change */}
-        <div className={`pr-transition ${fadeIn ? "pr-shown" : "pr-hidden"}`}>
-          <p className="text-indigo-600 font-semibold text-sm tracking-wide mb-3">
+        <div
+          className={`pr-transition text-center lg:text-left ${fadeIn ? "pr-shown" : "pr-hidden"}`}
+          style={{ minHeight: 220 }}
+        >
+          <p className="text-indigo-600 font-semibold text-xs sm:text-sm tracking-wide mb-2.5 sm:mb-3">
             {slide.date}
           </p>
-          <h3 className="text-3xl font-bold text-gray-900 leading-tight mb-5">
+          <h3 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight mb-4 sm:mb-5">
             {slide.heading}
           </h3>
           {slide.paragraphs.map((p, i) => (
-            <p key={i} className="text-gray-500 leading-relaxed mb-4">
+            <p key={i} className="text-gray-500 text-sm sm:text-base leading-relaxed mb-3.5 sm:mb-4">
               {p}
             </p>
           ))}
         </div>
 
         {/* Right: card mockup — also a stable DOM node */}
-        <div className="relative">
+        <div className="relative flex justify-center lg:justify-end w-full" style={{ minHeight: 260 }}>
           <div className="absolute -inset-6 bg-indigo-100/50 blur-3xl rounded-full" />
           <div
-            className={`relative pr-transition ${
+            className={`relative pr-transition w-full max-w-[560px] ${
               fadeIn ? "pr-card-shown" : "pr-card-hidden"
             }`}
           >
@@ -254,10 +257,10 @@ function QuantZenLogoMark({ className }) {
 
 function SdkDarkCard() {
   return (
-    <div className="relative inline-block max-w-[560px]">
+    <div className="relative w-full max-w-[560px] mx-auto">
       {/* Soft halo bleeding out from behind the card, like the screenshot */}
       <div
-        className="pointer-events-none absolute -inset-10 rounded-[32px]"
+        className="pointer-events-none absolute -inset-6 sm:-inset-10 rounded-[32px]"
         style={{
           background:
             "radial-gradient(60% 60% at 65% 70%, rgba(129,140,248,0.35) 0%, rgba(129,140,248,0.14) 45%, transparent 75%)",
@@ -270,20 +273,20 @@ function SdkDarkCard() {
         style={{ boxShadow: "0 30px 60px -15px rgba(30,20,80,0.45), 0 10px 25px -8px rgba(0,0,0,0.2)" }}
       >
         {/* White header: title + byline */}
-        <div className="px-6 pt-5 pb-4">
-          <h4 className="text-lg font-bold text-gray-900 leading-snug">
+        <div className="px-4 sm:px-6 pt-4 sm:pt-5 pb-3 sm:pb-4">
+          <h4 className="text-base sm:text-lg font-bold text-gray-900 leading-snug">
             QuantZen Launches Quantum-Safe SDK For Web3 Projects
           </h4>
-          <p className="text-xs text-gray-400 mt-2 flex items-center flex-wrap gap-x-1.5">
-            <span className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded">
+          <p className="text-[10px] sm:text-xs text-gray-400 mt-2 flex items-center flex-wrap gap-x-1.5 gap-y-1">
+            <span className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded whitespace-nowrap">
               Daily, Quantum Business, Research
             </span>
-            <span>&nbsp;·&nbsp; Mohib Ur Rehman &nbsp;·&nbsp; January 6, 2026</span>
+            <span className="whitespace-nowrap">&nbsp;·&nbsp; Mohib Ur Rehman &nbsp;·&nbsp; January 6, 2026</span>
           </p>
         </div>
 
         {/* Dark section with animated atom + spark background */}
-        <div className="relative h-56 overflow-hidden bg-[#07071a] flex flex-col items-center justify-center">
+        <div className="relative h-44 sm:h-52 lg:h-56 overflow-hidden bg-[#07071a] flex flex-col items-center justify-center">
           <style>{`
             @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
             @keyframes spinSlowReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
@@ -366,11 +369,11 @@ function SdkDarkCard() {
             </g>
           </svg>
 
-           <img src="/Logo.png" alt="QuantZen" className="w-16 h-16 mb-3 opacity-95 relative z-10" />
-          <div className="flex items-center gap-1 text-white text-2xl font-bold relative z-10">
+           <img src="/Logo.png" alt="QuantZen" className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 mb-2 sm:mb-3 opacity-95 relative z-10" />
+          <div className="flex items-center gap-1 text-white text-lg sm:text-xl lg:text-2xl font-bold relative z-10">
             QuantZen<sup className="text-xs align-super">™</sup>
           </div>
-          <p className="text-indigo-300 text-xs tracking-widest mt-2 font-medium relative z-10">
+          <p className="text-indigo-300 text-[10px] sm:text-xs tracking-widest mt-1.5 sm:mt-2 font-medium relative z-10 text-center px-4">
             PERPETUAL PROTECTION. ZERO FORKS.
           </p>
         </div>
@@ -388,38 +391,38 @@ function SdkDarkCard() {
 
 function NewsLightCard() {
   return (
-    <div className="relative inline-block max-w-[560px]">
+    <div className="relative w-full max-w-[560px] mx-auto">
       <div
         className="relative rounded-2xl overflow-hidden bg-white border border-gray-100"
         style={{ boxShadow: "0 30px 60px -15px rgba(30,20,80,0.35), 0 10px 25px -8px rgba(0,0,0,0.15)" }}
       >
         {/* Main masthead */}
-        <div className="bg-sky-200 px-5 py-3">
-          <p className="font-serif font-bold text-gray-800 tracking-wide text-center">
+        <div className="bg-sky-200 px-4 sm:px-5 py-2.5 sm:py-3">
+          <p className="font-serif font-bold text-gray-800 tracking-wide text-center text-sm sm:text-base">
             QUANTUM COMPUTING NEWS
           </p>
         </div>
 
         {/* Nav sub-strip, slightly darker than the masthead, centered + italic */}
-        <div className="bg-sky-300/70 px-5 py-1.5 flex items-center justify-center relative">
-          <p className="text-[10px] italic text-gray-700 tracking-wide text-center">
+        <div className="bg-sky-300/70 px-4 sm:px-5 py-1.5 flex items-center justify-center relative">
+          <p className="text-[9px] sm:text-[10px] italic text-gray-700 tracking-wide text-center px-6">
             News &nbsp;&nbsp; Op-Eds &nbsp;&nbsp; Research &nbsp;&nbsp; Events
           </p>
-          <span className="w-3 h-3 rounded-sm bg-gray-800/80 absolute right-5 flex items-center justify-center">
+          <span className="w-3 h-3 rounded-sm bg-gray-800/80 absolute right-3 sm:right-5 flex items-center justify-center flex-shrink-0">
             <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <path d="M20 6L9 17l-5-5" />
             </svg>
           </span>
         </div>
 
-        <div className="px-5 py-6 min-h-[150px] text-center">
-          <h4 className="text-red-600 font-serif font-bold text-xl leading-snug">
+        <div className="px-4 sm:px-5 py-5 sm:py-6 min-h-[130px] sm:min-h-[150px] text-center">
+          <h4 className="text-red-600 font-serif font-bold text-lg sm:text-xl leading-snug">
             The QuantZen Unveils Quantum-Safe SDK For Web3 Security
           </h4>
-          <p className="text-xs text-gray-400 mt-3">January 6, 2026 &nbsp;·&nbsp; 4 min read</p>
+          <p className="text-[11px] sm:text-xs text-gray-400 mt-2.5 sm:mt-3">January 6, 2026 &nbsp;·&nbsp; 4 min read</p>
         </div>
 
-        <p className="px-5 pb-3 text-[10px] italic text-gray-300 truncate">
+        <p className="px-4 sm:px-5 pb-3 text-[10px] italic text-gray-300 truncate">
           QuantZen Unveils Quantum-Safe SDK: A New Frontier in Web3 Security and Resilience
         </p>
       </div>
@@ -435,27 +438,27 @@ function NewsLightCard() {
 /* ---------- Slide 3: black card, green accent border ---------- */
 function GreenBorderCard() {
   return (
-    <div className="relative rounded-2xl overflow-hidden bg-emerald-400 p-2">
-      <div className="bg-black px-7 pt-6 pb-5">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src="/firsticonblack.png" alt="QuantZen" className="w-30 h-30 flex-shrink-0" />
-           <p className="text-gray-400 text-2xl font-medium tracking-wide">
+    <div className="relative w-full max-w-[560px] mx-auto rounded-2xl overflow-hidden bg-emerald-400 p-2">
+      <div className="bg-black px-4 sm:px-6 lg:px-7 pt-5 sm:pt-6 pb-5">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <img src="/firsticonblack.png" alt="QuantZen" className="w-16 h-16 sm:w-24 sm:h-24 lg:w-30 lg:h-30 flex-shrink-0" />
+           <p className="text-gray-400 text-base sm:text-xl lg:text-2xl font-medium tracking-wide truncate">
   <span className="relative inline-block">
     QuantZen
-    <span className="absolute -top-1 -right-3 text-xl font-bold leading-none">
+    <span className="absolute -top-1 -right-3 text-sm sm:text-lg lg:text-xl font-bold leading-none">
       ™
     </span>
   </span>
 </p>
           </div>
-           <img src="/secondiconblack.png" alt="QuantZen" className="w-52 h-32 flex-shrink-0" />
+           <img src="/secondiconblack.png" alt="QuantZen" className="w-24 h-16 sm:w-40 sm:h-24 lg:w-52 lg:h-32 flex-shrink-0" />
         </div>
-        <div className="pt-5">
-          <p className="text-white text-[16px] leading-relaxed font-semibold">
+        <div className="pt-4 sm:pt-5">
+          <p className="text-white text-[13px] sm:text-[15px] lg:text-[16px] leading-relaxed font-semibold">
             <span className="relative inline-block">
     QuantZen
-    <span className="absolute -top-1 -right-3 text-xl font-bold leading-none">
+    <span className="absolute -top-1 -right-3 text-sm sm:text-lg lg:text-xl font-bold leading-none">
       ™
     </span>{" "}
   </span>&nbsp; &nbsp; Joins Quantum Security
@@ -491,9 +494,9 @@ function ShieldEmblem({ size = 34 }) {
 /* ---------- Shared "Read Full Article" pill button ---------- */
 function ReadFullArticleButton() {
   return (
-    <span className="inline-flex items-center gap-1.5 bg-gray-900 text-white text-xs font-semibold px-3.5 py-2 rounded-full">
+    <span className="inline-flex items-center gap-1.5 bg-gray-900 text-white text-[11px] sm:text-xs font-semibold px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full whitespace-nowrap">
       Read Full Article
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="flex-shrink-0">
         <path d="M7 17L17 7M17 7H9M17 7V15" />
       </svg>
     </span>
