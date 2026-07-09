@@ -8,7 +8,7 @@ import Section from "../components/Section";
 const contactItems = [
   {
     title: "Product demonstrations",
-    body: "See interception, post-quantum protection, verification, and audit on a live request.",
+    body: "See interception, post quantum protection, verification, and audit on a live request.",
   },
   {
     title: "Partnership inquiries",
@@ -16,15 +16,15 @@ const contactItems = [
   },
   {
     title: "Pilot programs",
-    body: "Run a ring-fenced proof of concept against your own traffic and SLAs.",
+    body: "Run a ring fenced proof of concept against your own traffic and SLAs.",
   },
   {
     title: "Technical workshops",
-    body: "Deep-dive sessions on post-quantum migration and cryptographic agility with your engineers.",
+    body: "Deep dive sessions on post quantum migration and cryptographic agility with your engineers.",
   },
   {
     title: "Enterprise deployments",
-    body: "Plan a phased rollout across on-premise, cloud, and hybrid environments.",
+    body: "Plan a phased rollout across on premise, cloud, and hybrid environments.",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function Contact() {
                 Contact
               </span>
               <h2 className="mt-3.5 max-w-[760px] text-[34px] font-semibold leading-[1.2] tracking-tight text-slate-900 max-[860px]:text-[27px]">
-                Let&rsquo;s protect your API traffic — before the{" "}
+                Let&rsquo;s protect your API traffic before the{" "}
                 <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg,#6366f1,#a5b4fc,#7dd3fc)", backgroundSize: "200% auto", animation: "shimmer 3s linear infinite" }}>
                 purpose
                </span>{" "}

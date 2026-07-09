@@ -29,7 +29,7 @@ const components = [
   {
     num: "01",
     title: "API interception layer",
-    body: "Transparently intercepts outbound and inbound API calls — including POST, PUT, and PATCH — and applies protection without blocking application flow. Selection is policy-driven, so unprotected endpoints pass through cleanly.",
+    body: "Transparently intercepts outbound and inbound API calls including POST, PUT, and PATCH and applies protection without blocking application flow. Selection is policy driven, so unprotected endpoints pass through cleanly.",
   },
   {
     num: "02",
@@ -38,33 +38,33 @@ const components = [
   },
   {
     num: "03",
-    title: "Post-quantum authentication",
-    body: "Binds authenticity and integrity to every request with ML-DSA (Dilithium) digital signatures, so tampered or forged requests are rejected before processing.",
+    title: "Post quantum authentication",
+    body: "Binds authenticity and integrity to every request with ML DSA (Dilithium) digital signatures, so tampered or forged requests are rejected before processing.",
   },
   {
     num: "04",
-    title: "Post-quantum key establishment",
-    body: "Establishes session secrets with ML-KEM (Kyber) key encapsulation, with ephemeral keys held only in volatile memory and destroyed at session end.",
+    title: "Post quantum key establishment",
+    body: "Establishes session secrets with ML KEM (Kyber) key encapsulation, with ephemeral keys held only in volatile memory and destroyed at session end.",
   },
   {
     num: "05",
     title: "Payload integrity verification",
-    body: "Authenticated encryption (ChaCha20-Poly1305 / AES-256-GCM) protects the payload itself, detecting any modification in transit — not just on the transport hop.",
+    body: "Authenticated encryption (ChaCha20 Poly1305 / AES 256 GCM) protects the payload itself, detecting any modification in transit not just on the transport hop.",
   },
   {
     num: "06",
     title: "Verification engine",
-    body: "Server-side middleware decrypts, verifies signatures, checks replay protections, and forwards clean plaintext to backend logic — or rejects and logs the request.",
+    body: "Server side middleware decrypts, verifies signatures, checks replay protections, and forwards clean plaintext to backend logic or rejects and logs the request.",
   },
   {
     num: "07",
     title: "Policy engine",
-    body: "Centralized control over enabled algorithms, protected domains, threat responses, and audit destinations — distributed across the estate as data, not code.",
+    body: "Centralized control over enabled algorithms, protected domains, threat responses, and audit destinations distributed across the estate as data, not code.",
   },
   {
     num: "08",
     title: "Audit framework",
-    body: "Generates a tamper-evident record for every protected request — timestamp, source, algorithm, verification result, and threat outcome — for regulatory evidence.",
+    body: "Generates a tamper evident record for every protected request timestamp, source, algorithm, verification result, and threat outcome for regulatory evidence.",
   },
 ];
 
@@ -179,10 +179,10 @@ export default function ProductHero() {
               <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg,#6366f1,#a5b4fc,#7dd3fc)", backgroundSize: "200% auto", animation: "shimmer 3s linear infinite" }}>
                   QuantZen™{" "}
               </span>{" "}
-              — quantum-safe middleware<br className="hidden sm:block" /> for API communication.
+               quantum safe middleware<br className="hidden sm:block" /> for API communication.
             </h2>
             <p className="mt-4.5 max-w-[620px] text-lg leading-relaxed text-gray-500">
-              A modular security layer that intercepts API traffic, applies post-quantum cryptography, and records an immutable audit trail — without changing the systems it protects.
+              A modular security layer that intercepts API traffic, applies post quantum cryptography, and records an immutable audit trail without changing the systems it protects.
             </p>
           </div>
       </div>
@@ -300,7 +300,7 @@ export default function ProductHero() {
               QuantZen integrates with the API gateways and infrastructure you
               already operate. It runs as a stateless layer at the boundary, so
               traffic continues to flow through your existing gateway to
-              unchanged backend services. Adoption is incremental — protect one
+              unchanged backend services. Adoption is incremental protect one
               domain or route first, then expand by policy.
             </p>
           </div>

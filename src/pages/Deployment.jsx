@@ -5,16 +5,16 @@ import Section from "../components/Section";
 
 const deploymentModels = [
   { title: "On-premise", body: "Deploy entirely within your own data centers for full sovereignty over keys and traffic.", size: "col-span-4" },
-  { title: "Private cloud", body: "Run within a dedicated private-cloud tenancy alongside your existing services.", size: "col-span-2" },
-  { title: "Hybrid cloud", body: "Protect traffic spanning on-premise cores and public-cloud services with one consistent policy.", size: "col-span-3" },
+  { title: "Private cloud", body: "Run within a dedicated private cloud tenancy alongside your existing services.", size: "col-span-2" },
+  { title: "Hybrid cloud", body: "Protect traffic spanning on premise cores and public cloud services with one consistent policy.", size: "col-span-3" },
   { title: "Containerized", body: "Ship as a container image and run beside your services as a sidecar or gateway.", size: "col-span-3" },
 ];
 
 const pipelineSteps = [
-  { num: "01", title: "Assessment", body: "Map gateways, protocols, and payload formats; identify the highest-value traffic to protect first." },
-  { num: "02", title: "Integration", body: "Place the QuantZen layer at the boundary and connect to your existing gateway — no app changes." },
+  { num: "01", title: "Assessment", body: "Map gateways, protocols, and payload formats; identify the highest value traffic to protect first." },
+  { num: "02", title: "Integration", body: "Place the QuantZen layer at the boundary and connect to your existing gateway  no app changes." },
   { num: "03", title: "Testing", body: "Validate interception, signing, verification, and audit against real request formats and SLAs." },
-  { num: "04", title: "Pilot", body: "Run a ring-fenced subset of live traffic, measuring performance and operational impact." },
+  { num: "04", title: "Pilot", body: "Run a ring fenced subset of live traffic, measuring performance and operational impact." },
   { num: "05", title: "Production", body: "Expand coverage by policy across domains and routes at your pace." },
 ];
 

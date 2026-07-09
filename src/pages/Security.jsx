@@ -27,19 +27,19 @@ const modelCards = [
     icon: "!",
     style: riskIcon,
     title: "Harvest now, decrypt later",
-    body: "Encrypted traffic captured today is stored for the day a quantum computer can break it. Because financial and identity data stays sensitive for decades, this is a present risk — not a future one.",
+    body: "Encrypted traffic captured today is stored for the day a quantum computer can break it. Because financial and identity data stays sensitive for decades, this is a present risk not a future one.",
   },
   {
     icon: "∿",
     style: riskIcon,
-    title: "Public-key cryptography is the weak point",
-    body: "Shor's algorithm breaks RSA and elliptic-curve cryptography, the asymmetric primitives underpinning TLS key exchange and certificates. Grover's algorithm weakens symmetric strength, motivating larger keys.",
+    title: "Public key cryptography is the weak point",
+    body: "Shor's algorithm breaks RSA and elliptic curve cryptography, the asymmetric primitives underpinning TLS key exchange and certificates. Grover's algorithm weakens symmetric strength, motivating larger keys.",
   },
   {
     icon: "✓",
     style: safeIcon,
-    title: "Post-quantum cryptography mitigates it",
-    body: "Lattice-based ML-KEM and ML-DSA — NIST FIPS 203 and 204 — are designed to resist both classical and quantum attack. QuantZen applies them to live API traffic without a stack rebuild.",
+    title: "Post quantum cryptography mitigates it",
+    body: "Lattice based ML KEM and ML DSA NIST FIPS 203 and 204 are designed to resist both classical and quantum attack. QuantZen applies them to live API traffic without a stack rebuild.",
   },
   {
     icon: "↻",
@@ -50,11 +50,11 @@ const modelCards = [
 ];
 
 const protections = [
-  { icon: "S", title: "Payload signing & verification", body: "Each request is signed with a post-quantum digital signature over a canonical representation, and verified server-side before any backend processing occurs." },
-  { icon: "I", title: "Message integrity", body: "Authenticated encryption binds integrity to the payload, so any byte-level modification is detected and the request is rejected." },
+  { icon: "S", title: "Payload signing & verification", body: "Each request is signed with a post quantum digital signature over a canonical representation, and verified server side before any backend processing occurs." },
+  { icon: "I", title: "Message integrity", body: "Authenticated encryption binds integrity to the payload, so any byte level modification is detected and the request is rejected." },
   { icon: "R", title: "Replay protection", body: "Nonces, counters, and timestamps are bound into the signed request; previously seen or expired requests are refused." },
-  { icon: "M", title: "Man-in-the-middle protection", body: "Because authenticity is bound to the payload — not just the transport — an intermediary cannot silently alter, substitute, or impersonate a request." },
-  { icon: "A", title: "Tamper-evident audit trail", body: "Every request, verification result, and threat decision is written to a cryptographically chained, immutable audit record suitable for regulatory review." },
+  { icon: "M", title: "Man in the middle protection", body: "Because authenticity is bound to the payload not just the transport an intermediary cannot silently alter, substitute, or impersonate a request." },
+  { icon: "A", title: "Tamper evident audit trail", body: "Every request, verification result, and threat decision is written to a cryptographically chained, immutable audit record suitable for regulatory review." },
 ];
 function ProtectionIcon({ index, color }) {
   switch (index) {
@@ -381,13 +381,13 @@ const [openIndex, setOpenIndex] = useState(null);
       <h2 className="max-w-[760px] text-[34px] max-[860px]:text-[27px] font-bold text-gray-950 leading-snug">
         Why{" "}
         <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg,#6366f1,#a5b4fc,#7dd3fc)", backgroundSize: "200% auto", animation: "shimmer 3s linear infinite" }}>
-                post-quantum
+                post quantum
         </span>{" "}
         , and why at the payload.
       </h2>
       <p className="mt-4.5 max-w-[680px] text-lg text-slate-500 leading-relaxed">
         Transport encryption protects a single hop and terminates at
-        intermediaries. QuantZen protects the request itself —{" "}
+        intermediaries. QuantZen protects the request itself {" "}
         <span className="font-semibold text-gray-800">
           confidentiality, authenticity, and integrity
         </span>{" "}
@@ -527,7 +527,7 @@ const [openIndex, setOpenIndex] = useState(null);
         request — stopped.
       </h2>
             <p className="mt-4.5 max-w-[680px] text-lg text-slate-500 leading-relaxed">
-              A funds-transfer request leaves a banking app. An attacker on the
+              A funds transfer request leaves a banking app. An attacker on the
               path attempts to alter the destination account. Here is what
               QuantZen does.
             </p>
@@ -568,8 +568,8 @@ const [openIndex, setOpenIndex] = useState(null);
                 title="Request is protected at the boundary"
               >
                 QuantZen intercepts <span className="font-mono text-[12.5px] bg-gray-50 px-1.5 py-0.5 rounded">POST /transfers</span>, signs the
-                canonical request with ML-DSA, and encrypts the payload with an
-                ML-KEM-established session key.
+                canonical request with ML DSA, and encrypts the payload with an
+                ML KEM established session key.
               </ScenarioStep>
 
               <ScenarioStep
@@ -580,7 +580,7 @@ const [openIndex, setOpenIndex] = useState(null);
                 title="Attacker intercepts and tampers"
                 verdict="⚠ payload altered in transit"
               >
-                A man-in-the-middle modifies the beneficiary account number
+                A man in the middle modifies the beneficiary account number
                 inside the request body, then forwards it on.
               </ScenarioStep>
 
@@ -592,7 +592,7 @@ const [openIndex, setOpenIndex] = useState(null);
                 title="Replay is also attempted"
                 verdict="⚠ stale nonce detected"
               >
-                The attacker re-sends a previously captured valid request,
+                The attacker resends a previously captured valid request,
                 hoping to trigger a duplicate transfer.
               </ScenarioStep>
 
@@ -618,7 +618,7 @@ const [openIndex, setOpenIndex] = useState(null);
                 verdict="✓ logged & alertable"
               >
                 Each rejection is logged immutably with timestamp, source,
-                algorithm, and reason — producing tamper-evident evidence for
+                algorithm, and reason producing tamper evident evidence for
                 investigation and compliance.
               </ScenarioStep>
             </div>

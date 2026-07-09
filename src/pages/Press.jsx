@@ -21,31 +21,31 @@ export default function Press() {
 
             {/* Headline */}
             <h1 className="mt-8 max-w-[760px] text-[32px] font-semibold leading-[1.2] tracking-tight text-slate-900 sm:text-[38px]">
-              QuantZen™ Announces Patent-Pending Post-Quantum Security
-              Platform for API-Driven Infrastructure
+              QuantZen™ Announces Patent Pending Post Quantum Security
+              Platform for API Driven Infrastructure
             </h1>
             <p className="mt-4 max-w-[680px] text-[17px] leading-relaxed text-slate-500">
               Company files an Indian patent application for a middleware
-              approach that protects API communications against quantum-era
-              threats — without replacing existing infrastructure.
+              approach that protects API communications against quantum era
+              threats without replacing existing infrastructure.
             </p>
 
             {/* Body */}
             <div className="mt-10 space-y-5 text-[15.5px] leading-[1.75] text-slate-700">
               <p>
-                QuantZen™ today announced the launch of its patent-pending
+                QuantZen™ today announced the launch of its patent pending
                 platform for post-quantum cryptographic protection of
-                API-driven digital communication networks, and confirmed the
+                API driven digital communication networks, and confirmed the
                 filing of an Indian patent application covering its core
                 technology.
               </p>
               <p>
                 As organizations across banking, payments, telecommunications,
-                and government move critical operations onto API-driven
+                and government move critical operations onto API driven
                 infrastructure, the cryptography securing those communications
-                faces an approaching threat. Public-key algorithms such as RSA
-                and elliptic-curve cryptography — the foundation of
-                today&rsquo;s transport security — are vulnerable to future
+                faces an approaching threat. Public key algorithms such as RSA
+                and elliptic curve cryptography the foundation of
+                today&rsquo;s transport security are vulnerable to future
                 quantum computers. Adversaries are already understood to be
                 conducting &ldquo;harvest now, decrypt later&rdquo;
                 operations, capturing encrypted traffic today to decrypt once
@@ -55,7 +55,7 @@ export default function Press() {
               {/* Pull quote */}
               <div className="my-8 rounded-r-lg border-l-[3px] border-indigo-500 bg-sky-50/70 py-5 pl-6 pr-5">
                 <p className="text-[19px] font-medium italic leading-snug text-slate-800">
-                  &ldquo;Securing the post-quantum transition cannot require
+                  &ldquo;Securing the post quantum transition cannot require
                   every institution to rebuild its infrastructure. QuantZen
                   protects the API traffic organizations already run, today,
                   and gives them the agility to evolve as standards
@@ -66,25 +66,25 @@ export default function Press() {
               <p>
                 The QuantZen platform operates as a middleware security layer
                 at the API boundary. It intercepts API requests, applies
-                NIST-standardized post-quantum key establishment and digital
+                NIST standardized post quantum key establishment and digital
                 signatures, verifies authenticity and integrity before
-                requests reach backend systems, and records a tamper-evident
-                audit trail — all without modifying applications or API
+                requests reach backend systems, and records a tamper evident
+                audit trail all without modifying applications or API
                 gateways.
               </p>
               <p>
-                The company&rsquo;s patent-pending approach emphasizes four
+                The company&rsquo;s patent pending approach emphasizes four
                 capabilities its filing identifies as distinguishing:
-                quantum-aware threat detection, ephemeral key handling with no
-                persistent storage, hybrid integration of post-quantum
+                quantum aware threat detection, ephemeral key handling with no
+                persistent storage, hybrid integration of post quantum
                 cryptography with quantum key distribution, and immutable
                 audit logging for regulated industries.
               </p>
               <p>
                 QuantZen&rsquo;s mission is to secure the world&rsquo;s
                 digital communications against quantum threats by making
-                post-quantum protection deployable without disruption —
-                establishing a durable trust layer for the API-driven systems
+                post quantum protection deployable without disruption 
+                establishing a durable trust layer for the API driven systems
                 that critical industries depend on.
               </p>
               <p>

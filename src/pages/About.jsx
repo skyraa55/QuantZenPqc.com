@@ -7,27 +7,27 @@ import AtomDivider from "../components/AtomDivider";
 const valueMissionCards = [
   {
     title: "Vision",
-    body: "A digital economy whose critical communications remain confidential and verifiable for their entire lifetime — regardless of advances in computing.",
+    body: "A digital economy whose critical communications remain confidential and verifiable for their entire lifetime regardless of advances in computing.",
   },
   {
     title: "Mission",
-    body: "To make post-quantum protection deployable on the infrastructure organizations already run, removing cost, disruption, and risk as barriers to migration.",
+    body: "To make post quantum protection deployable on the infrastructure organizations already run, removing cost, disruption, and risk as barriers to migration.",
   },
   {
     title: "Technology focus",
-    body: "Standardized post-quantum cryptography applied at the API layer: interception, authentication, key establishment, verification, agility, and immutable audit.",
+    body: "Standardized post quantum cryptography applied at the API layer: interception, authentication, key establishment, verification, agility, and immutable audit.",
   },
   {
-    title: "Long-term objective",
-    body: "To become the trust layer for quantum-resilient digital communications — the dependable boundary through which critical API traffic is protected.",
+    title: "Long term objective",
+    body: "To become the trust layer for quantum resilient digital communications the dependable boundary through which critical API traffic is protected.",
   },
 ];
 
 const disciplines = [
   {
     code: "PQ",
-    title: "Post-quantum cryptography",
-    body: "Applying NIST-standardized lattice-based algorithms to real production traffic, with the agility to adopt what comes next.",
+    title: "Post quantum cryptography",
+    body: "Applying NIST standardized lattice based algorithms to real production traffic, with the agility to adopt what comes next.",
   },
   {
     code: "AS",
@@ -83,13 +83,13 @@ export default function About() {
               <h2 className="mx-auto mt-4 max-w-[600px] text-[34px] font-semibold leading-[1.2] tracking-tight text-slate-900 max-[860px]:text-[27px]">
                 A trust layer for{" "}
                 <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg,#6366f1,#a5b4fc,#7dd3fc)", backgroundSize: "200% auto", animation: "shimmer 3s linear infinite" }}>
-                quantum-resilient
+                quantum resilient
                </span>{" "}
                 communication.
               </h2>
               <p className="mx-auto mt-5 max-w-[600px] text-lg leading-relaxed text-slate-500">
                 QuantZen™ is an enterprise cybersecurity company building the
-                cryptographic infrastructure that keeps API-driven systems
+                cryptographic infrastructure that keeps API driven systems
                 trustworthy through the quantum transition and beyond.
               </p>
             </div>
