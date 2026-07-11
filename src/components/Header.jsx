@@ -336,7 +336,7 @@ export default function Header() {
               {link.label}
             </NavLink>
           ))}
-          <Link to="/contact" className="qz-cta" onClick={closeMenu}>
+          <Link to="/contact" className="qz-mobile-cta" onClick={closeMenu}>
               Technical Paper
             </Link>
           <Link to="/contact" className="qz-mobile-cta" onClick={closeMenu}>
