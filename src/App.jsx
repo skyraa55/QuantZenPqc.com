@@ -8,7 +8,7 @@ import Deployment from "./pages/Deployment";
 import Press from "./pages/Press";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import WhyNot from "./pages/Whynot";
+import WhyNow from "./pages/Whynow";
 
 export default function App() {
   return (
@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/press" element={<Press />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/whynot" element={<WhyNot />} />
+        <Route path="/whynow" element={<WhyNow />} />
         {/* Fallback: unknown routes redirect to the home page content */}
         <Route path="*" element={<Home />} />
       </Route>

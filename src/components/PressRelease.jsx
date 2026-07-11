@@ -45,18 +45,18 @@ const SLIDES = [
     date: "JANUARY 2026",
     heading: "QuantZen Expands Quantum Security Research",
     paragraphs: [
-      "Building on its December milestone, QuantZen has expanded its quantum cryptography research initiatives to accelerate post-quantum readiness across decentralized and enterprise systems.",
-      "This expansion focuses on real-world deployment, interoperability, and performance optimization for next-generation cryptographic frameworks.",
+      "Building on its December milestone, QuantZen has expanded its quantum cryptography research initiatives to accelerate post quantum readiness across decentralized and enterprise systems.",
+      "This expansion focuses on real world deployment, interoperability, and performance optimization for next generation cryptographic frameworks.",
     ],
     card: "sdkDark",
   },
   {
     id: "sdk-news",
     date: "JANUARY 2026",
-    heading: "QuantZen Launches Quantum-Safe SDK to Strengthen Web3 Security",
+    heading: "QuantZen Launches Quantum Safe SDK to Strengthen Web3 Security",
     paragraphs: [
-      "QuantZen introduces a next-generation quantum-safe SDK designed to protect Web3 applications from emerging quantum threats.",
-      "The solution enables developers to build resilient, future-proof decentralized systems with enhanced cryptographic security.",
+      "QuantZen introduces a next generation quantum safe SDK designed to protect Web3 applications from emerging quantum threats.",
+      "The solution enables developers to build resilient, future proof decentralized systems with enhanced cryptographic security.",
     ],
     card: "newsLight",
   },
@@ -65,8 +65,8 @@ const SLIDES = [
     date: "DECEMBER 2025",
     heading: "Advancing Quantum-Safe Infrastructure",
     paragraphs: [
-      "QuantZen is pioneering next-generation quantum-safe security frameworks designed to protect Web3 and digital asset ecosystems against future cryptographic threats.",
-      "This milestone reinforces QuantZen's commitment to building resilient, decentralized, and future-ready security solutions.",
+      "QuantZen is pioneering next generation quantum safe security frameworks designed to protect Web3 and digital asset ecosystems against future cryptographic threats.",
+      "This milestone reinforces QuantZen's commitment to building resilient, decentralized, and future ready security solutions.",
     ],
     card: "greenBorder",
   },
@@ -275,7 +275,7 @@ function SdkDarkCard() {
         {/* White header: title + byline */}
         <div className="px-4 sm:px-6 pt-4 sm:pt-5 pb-3 sm:pb-4">
           <h4 className="text-base sm:text-lg font-bold text-gray-900 leading-snug">
-            QuantZen Launches Quantum-Safe SDK For Web3 Projects
+            QuantZen Launches Quantum Safe SDK For Web3 Projects
           </h4>
           <p className="text-[10px] sm:text-xs text-gray-400 mt-2 flex items-center flex-wrap gap-x-1.5 gap-y-1">
             <span className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded whitespace-nowrap">
@@ -417,13 +417,13 @@ function NewsLightCard() {
 
         <div className="px-4 sm:px-5 py-5 sm:py-6 min-h-[130px] sm:min-h-[150px] text-center">
           <h4 className="text-red-600 font-serif font-bold text-lg sm:text-xl leading-snug">
-            The QuantZen Unveils Quantum-Safe SDK For Web3 Security
+            The QuantZen Unveils Quantum Safe SDK For Web3 Security
           </h4>
           <p className="text-[11px] sm:text-xs text-gray-400 mt-2.5 sm:mt-3">January 6, 2026 &nbsp;·&nbsp; 4 min read</p>
         </div>
 
         <p className="px-4 sm:px-5 pb-3 text-[10px] italic text-gray-300 truncate">
-          QuantZen Unveils Quantum-Safe SDK: A New Frontier in Web3 Security and Resilience
+          QuantZen Unveils Quantum Safe SDK: A New Frontier in Web3 Security and Resilience
         </p>
       </div>
 
@@ -463,7 +463,7 @@ function GreenBorderCard() {
     </span>{" "}
   </span>&nbsp; &nbsp; Joins Quantum Security
             <br />
-            Defence to Advance Quantum-Safe
+            Defence to Advance Quantum Safe
             <br />
             Infrastructure Across Web3 and Digital
             <br />

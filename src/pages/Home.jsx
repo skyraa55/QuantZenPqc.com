@@ -211,6 +211,8 @@ import QuantZenSection from "../components/QuantZenSection";
 import QuantZenSDKSection from "../components/QuantZenSDKSection";
 import NewsletterSection from "../components/NewsletterSection";
 import QDayCountdownSection from "../components/QDayCountdownSection";
+import CustomerJourney from "../components/ CustomerJourney";
+import ActivePilots from "../components/ActivePilots";
 
 const threatCards = [
   {
@@ -263,7 +265,7 @@ const challengePoints = [
   {
     icon: <Database size={17} />,
     title: "Harvest now, decrypt later",
-    body: "Sensitive data intercepted today may be stored and decrypted in the future once large-scale quantum computers arrive.",
+    body: "Sensitive data intercepted today may be stored and decrypted in the future once large scale quantum computers arrive.",
   },
   {
     icon: <Server size={17} />,
@@ -273,7 +275,7 @@ const challengePoints = [
   {
     icon: <ShieldCheck size={17} />,
     title: "The window is now",
-    body: "Critical sectors must begin planning for quantum-safe migration before the transition becomes urgent.",
+    body: "Critical sectors must begin planning for quantum safe migration before the transition becomes urgent.",
   },
 ];
 
@@ -399,6 +401,10 @@ export default function Home() {
        <AtomDivider from="#ffffff" to="#ffffff" />
        <PressRelease />
        <AtomDivider from="#ffffff" to="#ffffff" />
+       <CustomerJourney />
+       <AtomDivider from="#ffffff" to="#ffffff" />
+       <ActivePilots />
+        <AtomDivider from="#ffffff" to="#ffffff" />
        <QuantZenSection />
         <AtomDivider from="#ffffff" to="#ffffff" />
       {/* <section className="relative overflow-hidden bg-white">

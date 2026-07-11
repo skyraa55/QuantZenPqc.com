@@ -63,8 +63,6 @@ export default function Footer() {
             <div>
               <h5 className="mb-3 font-mono text-[11px] tracking-[0.12em] text-slate-400 uppercase">Company</h5>
               <Link className="block cursor-pointer py-1 text-sm text-slate-600 hover:text-blue" to="/use-cases">Use Cases</Link>
-              <Link className="block cursor-pointer py-1 text-sm text-slate-600 hover:text-blue" to="/about">About</Link>
-              <Link className="block cursor-pointer py-1 text-sm text-slate-600 hover:text-blue" to="/press">Press</Link>
             </div>
             <div>
               <h5 className="mb-3 font-mono text-[11px] tracking-[0.12em] text-slate-400 uppercase">Engage</h5>

@@ -5,9 +5,9 @@ import {
 } from "lucide-react";
 
 const items = [
-  { letter: "Q", word: "Quantum-Safe",           icon: <ShieldCheck size={18} />, body: "Cryptography built to withstand attacks from large-scale quantum computers, not just today's classical threats." },
-  { letter: "R", word: "Ready to Deploy",         icon: <Rocket size={18} />,      body: "Integrate in days, not quarters QuantZen™ is built to go live fast, without a re-architecture cycle." },
-  { letter: "S", word: "Secure by Design",        icon: <Lock size={18} />,        body: "Post-quantum protection isn't bolted on it's foundational to how QuantZen™ is engineered." },
+  { letter: "Q", word: "Quantum-Safe",           icon: <ShieldCheck size={18} />, body: "Cryptography built to withstand attacks from large scale quantum computers, not just today's classical threats." },
+  { letter: "R", word: "Ready to Deploy",         icon: <Rocket size={18} />,      body: "Integrate in days, not quarters QuantZen™ is built to go live fast, without a re architecture cycle." },
+  { letter: "S", word: "Secure by Design",        icon: <Lock size={18} />,        body: "Post quantum protection isn't bolted on it's foundational to how QuantZen™ is engineered." },
   { letter: "T", word: "Trust Layer",             icon: <Fingerprint size={18} />, body: "A dedicated cryptographic trust layer that authenticates and protects every request in transit." },
   { letter: "U", word: "Unified Integration",     icon: <Link2 size={18} />,       body: "One SDK across your stack APIs, gateways, and services with a single consistent integration path." },
   { letter: "V", word: "Verifiable Integrity",    icon: <BadgeCheck size={18} />,  body: "Every signature and exchange can be independently verified, leaving no room for silent tampering." },

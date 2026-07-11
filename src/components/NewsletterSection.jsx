@@ -79,7 +79,7 @@ export default function NewsletterSection() {
             </div>
 
             <p className="max-w-[440px] text-[15px] leading-relaxed text-slate-500">
-              Your Friday 5-minute read on post-quantum security, Web3 risk,
+              Your Friday 5 minute read on post quantum security, Web3 risk,
               and practical migration insights. Stay informed subscribe to
               get the latest in your inbox.
             </p>

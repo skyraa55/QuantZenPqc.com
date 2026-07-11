@@ -123,19 +123,19 @@ const IconGauge = (props) => (
 );
 
 const threatStats = [
-  { fig: "~0%", cap: "of the public web has deployed hybrid post-quantum TLS certificates — the most visible layer of migration has effectively not started.", src: "2026 scan of 32,011 domains", bg: "#F1ECFF", chip: "#E2D7FF", text: "#4338CA", icon: IconAlert },
-  { fig: "~60%", cap: "of security teams are already prototyping or evaluating post-quantum cryptography — intent is high, deployment is not.", src: "2025 survey, 3,100+ practitioners", bg: "#EAF1FF", chip: "#D7E4FF", text: "#1E3A8A", icon: IconGauge },
-  { fig: "5–15 yrs", cap: "is the realistic rip-and-replace migration time for a large institution — longer than the deadlines now allow.", src: "Industry migration estimates", bg: "#E7FBF6", chip: "#D2F5EA", text: "#0F766E", icon: IconClock },
+  { fig: "~0%", cap: "of the public web has deployed hybrid post quantum TLS certificates the most visible layer of migration has effectively not started.", src: "2026 scan of 32,011 domains", bg: "#F1ECFF", chip: "#E2D7FF", text: "#4338CA", icon: IconAlert },
+  { fig: "~60%", cap: "of security teams are already prototyping or evaluating post quantum cryptography intent is high, deployment is not.", src: "2025 survey, 3,100+ practitioners", bg: "#EAF1FF", chip: "#D7E4FF", text: "#1E3A8A", icon: IconGauge },
+  { fig: "5–15 yrs", cap: "is the realistic rip and replace migration time for a large institution longer than the deadlines now allow.", src: "Industry migration estimates", bg: "#E7FBF6", chip: "#D2F5EA", text: "#0F766E", icon: IconClock },
 ];
 
 const deadlines = [
   { date: "Sep 2026", jur: "Global", hot: true, title: "FIPS 140-2 modules sunset", body: "Legacy validated cryptographic modules begin to age out, pulling PQC forward in every regulated procurement." },
-  { date: "End 2026", jur: "European Union", hot: true, title: "Begin the transition", body: "The EU coordinated roadmap sets end-2026 to start transitioning; DORA adds binding crypto-agility obligations for financial entities." },
-  { date: "Dec 2026", jur: "India", hot: true, title: "Cryptographic Bill of Materials due", body: "In-scope organizations are expected to inventory their cryptography under the national quantum-safe roadmap." },
-  { date: "Jan 2027", jur: "United States", hot: false, title: "CNSA 2.0 procurement gate", body: "National-security and critical-infrastructure suppliers must ship quantum-safe capability or exit the bid." },
+  { date: "End 2026", jur: "European Union", hot: true, title: "Begin the transition", body: "The EU coordinated roadmap sets end 2026 to start transitioning; DORA adds binding crypto agility obligations for financial entities." },
+  { date: "Dec 2026", jur: "India", hot: true, title: "Cryptographic Bill of Materials due", body: "In scope organizations are expected to inventory their cryptography under the national quantum safe roadmap." },
+  { date: "Jan 2027", jur: "United States", hot: false, title: "CNSA 2.0 procurement gate", body: "National security and critical infrastructure suppliers must ship quantum safe capability or exit the bid." },
   { date: "2028–29", jur: "India", hot: false, title: "Critical information infrastructure", body: "Critical systems targeted for migration; the RBI's readiness horizon frames the banking sector's timeline." },
-  { date: "2030", jur: "EU · US · UAE", hot: false, title: "High-risk systems quantum-safe", body: "EU critical infrastructure, US Executive Order 14412 key-establishment, and UAE transition-plan mandates converge on 2030." },
-  { date: "2031", jur: "United States", hot: false, title: "Digital signatures migrated", body: "EO 14412 extends the requirement to post-quantum signatures for high-impact and high-value systems." },
+  { date: "2030", jur: "EU · US · UAE", hot: false, title: "High-risk systems quantum-safe", body: "EU critical infrastructure, US Executive Order 14412 key establishment, and UAE transition plan mandates converge on 2030." },
+  { date: "2031", jur: "United States", hot: false, title: "Digital signatures migrated", body: "EO 14412 extends the requirement to post quantum signatures for high impact and high value systems." },
 ];
 
 const deadlineTheme = {
@@ -153,7 +153,7 @@ const deadlineTheme = {
   },
 };
 
-export default function WhyNot() {
+export default function WhyNoW() {
   const [heroRef, heroVisible] = useReveal();
   const [statsRef, statsVisible] = useReveal();
   const [timelineRef] = useReveal();
@@ -555,13 +555,13 @@ export default function WhyNot() {
                 Icon: IconBank,
                 iconBg: "linear-gradient(135deg, #6366F1 0%, #4F46E5 100%)",
                 title: "Banking & payments",
-                body: "National guidance names financial services among the first to migrate. Payment rails, KYC and identity data carry the longest confidentiality horizons — and the highest harvest-now value.",
+                body: "National guidance names financial services among the first to migrate. Payment rails, KYC and identity data carry the longest confidentiality horizons and the highest harvest now value.",
               },
               {
                 Icon: IconTelecom,
                 iconBg: "linear-gradient(135deg, #38BFE3 0%, #3B82F6 100%)",
                 title: "Telecom & eSIM",
-                body: "The GSMA Post-Quantum Telco Network Taskforce — 50+ companies and 20+ operators — is already publishing migration guidelines for SIM, device authentication and crypto-agility.",
+                body: "The GSMA Post Quantum Telco Network Taskforce 50+ companies and 20+ operators is already publishing migration guidelines for SIM, device authentication and crypto agility.",
               },
             ].map((c, i) => (
               <div
