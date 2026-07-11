@@ -44,10 +44,10 @@ export default function Footer() {
             </p>
 
             <div className="mt-5 flex items-center gap-2.5">
-              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="QuantZen on X" className="grid h-8 w-8 place-items-center rounded-full border-[1.5px] border-slate-200 text-slate-500 transition-colors hover:border-blue hover:text-blue">
+              <a href="https://x.com/quant_zen" target="_blank" rel="noopener noreferrer" aria-label="QuantZen on X" className="grid h-8 w-8 place-items-center rounded-full border-[1.5px] border-slate-200 text-slate-500 transition-colors hover:border-blue hover:text-blue">
                 <XIcon />
               </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="QuantZen on LinkedIn" className="grid h-8 w-8 place-items-center rounded-full border-[1.5px] border-slate-200 text-slate-500 transition-colors hover:border-blue hover:text-blue">
+              <a href="https://www.linkedin.com/company/quantix09/" target="_blank" rel="noopener noreferrer" aria-label="QuantZen on LinkedIn" className="grid h-8 w-8 place-items-center rounded-full border-[1.5px] border-slate-200 text-slate-500 transition-colors hover:border-blue hover:text-blue">
                 <LinkedInIcon />
               </a>
             </div>
@@ -63,19 +63,35 @@ export default function Footer() {
             <div>
               <h5 className="mb-3 font-mono text-[11px] tracking-[0.12em] text-slate-400 uppercase">Company</h5>
               <Link className="block cursor-pointer py-1 text-sm text-slate-600 hover:text-blue" to="/use-cases">Use Cases</Link>
+              <Link className="block cursor-pointer py-1 text-sm text-slate-600 hover:text-blue" >Privacy policy</Link>
+              <Link className="block cursor-pointer py-1 text-sm text-slate-600 hover:text-blue" >Terms of use</Link>
             </div>
             <div>
               <h5 className="mb-3 font-mono text-[11px] tracking-[0.12em] text-slate-400 uppercase">Engage</h5>
-              <Link className="block cursor-pointer py-1 text-sm text-slate-600 hover:text-blue" to="/contact">Request a demo</Link>
-              <Link className="block cursor-pointer py-1 text-sm text-slate-600 hover:text-blue" to="/contact">Pilot programs</Link>
-              <Link className="block cursor-pointer py-1 text-sm text-slate-600 hover:text-blue" to="/contact">Partnerships</Link>
+              <div>
+                <Link  className="inline-flex items-center px-[18px] py-[9px] ml-2 rounded-[9px] bg-gradient-to-br from-sky-500 to-indigo-500 !text-white text-[13.5px] font-semibold no-underline whitespace-nowrap border-none cursor-pointer shadow-[0_4px_18px_rgba(99,102,241,0.30),inset_0_1px_0_rgba(255,255,255,0.14)] transition-[transform,box-shadow] duration-[180ms] ease-out" to="/contact">
+                  Request a demo
+                </Link>
+
+              </div>
+               <div className="pt-2">
+              <Link  className="inline-flex items-center px-[18px] py-[9px] ml-2 rounded-[9px] bg-gradient-to-br from-sky-500 to-indigo-500 !text-white text-[13.5px] font-semibold no-underline whitespace-nowrap border-none cursor-pointer shadow-[0_4px_18px_rgba(99,102,241,0.30),inset_0_1px_0_rgba(255,255,255,0.14)] transition-[transform,box-shadow] duration-[180ms] ease-out" to="/contact">
+              Contact us
+            </Link>
+
             </div>
+              
+            
+              
+            </div>
+           
+            
           </div>
         </div>
 
         <div className="mt-10 flex flex-wrap justify-between gap-4 border-t border-slate-200 pt-5.5 font-mono text-[12.5px] text-slate-500">
-          <span>© 2026 QuantZen™. All rights reserved.</span>
-          <span>Patent · Indian Patent Application Filed</span>
+          <span>© 2025 Zenith Studio LLC. All Rights Reserved. QuantZen™ developed by Zenith Studio LLC are registered trademarks licensed under the Government of Ras Al Khaimah, United Arab Emirates. All content, including but not limited to text, code, software, graphics, trademarks, visual identity, SDK , Logo documentation, and digital assets, is the exclusive intellectual property of Zenith Studio LLC. Unauthorised reproduction, distribution, modification, reverse engineering, or republication, in whole or in part, without prior written permission, is strictly prohibited and may result in legal action under applicable UAE Federal Copyright Law No. 7 of 2002 (as amended) and relevant international treaties.</span>
+          <span> Patent filed application no : 202641078837</span>
         </div>
       </Wrap>
     </footer>

@@ -323,9 +323,10 @@ export default function AnimatedHero() {
 
         {/* Headline */}
         <h1 style={styles.h1}>
-          Quantum resilient protection
+         THE SUSTAINABILITY TRUST 
           <br />
-          for the APIs your business{" "}
+          LAYER ​
+FOR THE POST-QUANTUM DIGITAL{" "}
            <span
   className="inline-block bg-clip-text text-transparent"
   style={{
@@ -335,16 +336,13 @@ export default function AnimatedHero() {
     animation: "shimmer 3s linear infinite",
   }}
 >
-  runs on.
+   ECONOMY​
 </span>{" "}
         </h1>
 
         {/* Sub-copy */}
         <p style={styles.sub}>
-          QuantZen™ is a middleware security layer that adds{" "}
-          <strong style={styles.strong}>post quantum cryptographic protection</strong> to
-          your API traffic without replacing infrastructure or modifying a single
-          application.
+          The post quantum trust layer for digital infrastructure, enabling banks, telecom operators, and enterprises to adopt quantum safe cryptography without replacing existing systems by securing APIs and biometric authentication through a PQC agile architecture designed for quantum resilience.
         </p>
 
         {/* CTAs */}
@@ -356,13 +354,7 @@ export default function AnimatedHero() {
           >
             Request a demo →
           </button>
-          <button
-            style={styles.bg}
-            onMouseEnter={e => Object.assign(e.currentTarget.style, styles.bgHover)}
-            onMouseLeave={e => Object.assign(e.currentTarget.style, styles.bg)}
-          >
-            See the architecture ↗
-          </button>
+         
         </div>
 
         {/* Trusted icon */}

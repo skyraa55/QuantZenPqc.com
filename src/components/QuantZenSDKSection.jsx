@@ -54,7 +54,8 @@ export default function QuantZenSDKSection() {
             Web2 Flow
           </span>
         </div>
-        <ArchDiagram nodes={web2FlowNodes} />
+        <div className="relative mx-auto max-w-[900px] px-6 py-20"><ArchDiagram nodes={web2FlowNodes} /></div>
+        
 
         {/* Key Capabilities */}
         <div className="mt-16 mb-6 flex items-center gap-3 max-[860px]:justify-center">

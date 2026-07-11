@@ -190,7 +190,7 @@ export default function Contact() {
                   )}
 
                   <p className="mt-4 font-mono text-xs text-slate-400">
-                    Prefer email? Reach the team at hello@quantzen.example
+                    Prefer email? Reach the team at support@quantzenpqc.com
                   </p>
                 </div>
               </div>
